@@ -26,7 +26,7 @@ export const Friends = () => {
   };
 
   const addRow = () => {
-    if (!friends[friends.length - 1].name) return;
+    if (friends.length && !friends[friends.length - 1].name) return;
 
     initFriend();
     updateSupermanPosition(supermanPosition + 250);
