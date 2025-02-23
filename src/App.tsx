@@ -14,6 +14,7 @@ import superman from "./assets/superman3.png";
 import { useState } from "react";
 import { HOBBIES } from "./constants/user";
 import BasicInfo from "./components/BasicInfo";
+import Address from "./components/Address";
 
 function App() {
   const {
@@ -21,8 +22,6 @@ function App() {
     age,
     address,
     friends,
-    updateCity,
-    updateCountry,
     removeFriend,
     updateFriendName,
     initFriend,
@@ -57,22 +56,7 @@ function App() {
     <>
       <div className="relative flex flex-col gap-[30px] mx-[20px] justify-center lg:flex-row lg:justify-between lg:w-[--page-width] lg:mx-auto">
         <BasicInfo />
-        <section className="section z-10">
-          <h1 className="section-heading mb-5">Address</h1>
-          <TextField
-            sx={{ marginRight: 5 }}
-            label="Country"
-            variant="standard"
-            value={address?.country}
-            onChange={(e) => updateCountry(e.target.value)}
-          />
-          <TextField
-            label="City"
-            variant="standard"
-            value={address?.city}
-            onChange={(e) => updateCity(e.target.value)}
-          />
-        </section>
+        <Address />
         <img
           src={superman}
           style={{
