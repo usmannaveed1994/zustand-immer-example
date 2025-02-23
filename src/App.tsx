@@ -13,6 +13,7 @@ import { useUserStore } from "./store/userStore";
 import superman from "./assets/superman3.png";
 import { useState } from "react";
 import { HOBBIES } from "./constants/user";
+import BasicInfo from "./components/BasicInfo";
 
 function App() {
   const {
@@ -20,8 +21,6 @@ function App() {
     age,
     address,
     friends,
-    updateName,
-    updateAge,
     updateCity,
     updateCountry,
     removeFriend,
@@ -57,22 +56,7 @@ function App() {
   return (
     <>
       <div className="relative flex flex-col gap-[30px] mx-[20px] justify-center lg:flex-row lg:justify-between lg:w-[--page-width] lg:mx-auto">
-        <section className="section">
-          <h1 className="section-heading mb-5">Basic Info</h1>
-          <TextField
-            sx={{ marginRight: 5 }}
-            label="Name"
-            variant="standard"
-            value={name}
-            onChange={(e) => updateName(e.target.value)}
-          />
-          <TextField
-            label="Age"
-            variant="standard"
-            value={age}
-            onChange={(e) => updateAge(Number(e.target.value) || 0)}
-          />
-        </section>
+        <BasicInfo />
         <section className="section z-10">
           <h1 className="section-heading mb-5">Address</h1>
           <TextField
