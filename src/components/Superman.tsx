@@ -11,7 +11,7 @@ const Superman = () => {
         right: `-${130 + supermanPosition}px`,
         top: `-${40 + supermanPosition}px`,
       }}
-      className="absolute h-[200px] z-0 transition-all ease-in-out duration-[2s]"
+      className="hidden absolute h-[200px] z-0 transition-all ease-in-out duration-[2s] xl:block"
     />
   );
 };
